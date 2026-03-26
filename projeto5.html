@@ -5,9 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Produção Audiovisual — Niki Nomura</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <style>
             body { background-color: #000; color: #fff; }
@@ -18,62 +17,46 @@
             .projeto-titulo { font-family: "Varela Round", sans-serif; font-size: 2.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; }
             .projeto-data { font-family: "Nunito", sans-serif; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
             .projeto-descricao { font-family: "Nunito", sans-serif; font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,0.65); max-width: 720px; margin-bottom: 4rem; }
-            /* Vídeos em grid */
+
             .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 5rem; }
-            @media (max-width: 768px) { .video-grid { grid-template-columns: 1fr; } .projeto-titulo { font-size: 1.8rem; } }
             .video-item { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #111; }
             .video-item iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
             .footer-projeto { padding: 3rem 0; text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.2); letter-spacing: 0.1em; border-top: 1px solid rgba(255,255,255,0.06); }
+
+            @media (max-width: 768px) {
+                .video-grid { grid-template-columns: 1fr; gap: 1rem; }
+                .projeto-titulo { font-size: 1.5rem; }
+                .projeto-header { padding: 3rem 0 1.5rem 0; }
+                .projeto-descricao { font-size: 0.95rem; margin-bottom: 2rem; }
+            }
         </style>
     </head>
     <body>
         <div class="container px-4 px-lg-5">
-
             <a href="index.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> Voltar</a>
-
             <div class="projeto-header">
                 <h1 class="projeto-titulo">Produção Audiovisual</h1>
-                <!-- Substitua pelo ano ou período do projeto -->
                 <p class="projeto-data">São Paulo, Brasil</p>
             </div>
-
-            <!-- Substitua pelo texto descritivo do projeto -->
-            <p class="projeto-descricao">
-                
-            </p>
-
-            <!--
-                Para adicionar vídeos do YouTube ou Vimeo, copie o link de incorporação (embed).
-                No YouTube: clique em "Compartilhar" > "Incorporar" e copie o src do iframe.
-                Para o Vimeo, o src deve seguir o formato: https://player.vimeo.com/video/ID
-                Substitua o src abaixo pelo link real de cada vídeo.
-            -->
+            <p class="projeto-descricao"></p>
             <div class="video-grid">
-
                 <div class="video-item">
-                    <iframe src="https://player.vimeo.com/video/649036520" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/649036520" loading="lazy" allowfullscreen></iframe>
                 </div>
-
                 <div class="video-item">
-                    <iframe src="https://player.vimeo.com/video/717981982" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/717981982" loading="lazy" allowfullscreen></iframe>
                 </div>
-
                 <div class="video-item">
-                    <iframe src="https://player.vimeo.com/video/395568974" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/395568974" loading="lazy" allowfullscreen></iframe>
                 </div>
-
                 <div class="video-item">
-                    <iframe src="https://player.vimeo.com/video/614830297" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/614830297" loading="lazy" allowfullscreen></iframe>
                 </div>
-
                 <div class="video-item">
-                    <iframe src="https://player.vimeo.com/video/437160853" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/437160853" loading="lazy" allowfullscreen></iframe>
                 </div>
-
-                <!-- Adicione quantos vídeos quiser seguindo o mesmo padrão -->
-
             </div>
-
         </div>
         <footer class="footer-projeto">Copyright &copy; Niki Nomura</footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

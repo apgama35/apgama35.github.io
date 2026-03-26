@@ -5,9 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Etc — Niki Nomura</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <style>
             body { background-color: #000; color: #fff; }
@@ -18,86 +17,70 @@
             .projeto-titulo { font-family: "Varela Round", sans-serif; font-size: 2.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; }
             .projeto-data { font-family: "Nunito", sans-serif; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
             .projeto-descricao { font-family: "Nunito", sans-serif; font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,0.65); max-width: 720px; margin-bottom: 4rem; }
-            .galeria { column-count: 3; column-gap: 1rem; margin-bottom: 5rem; }
-            @media (max-width: 992px) { .galeria { column-count: 2; } }
-            @media (max-width: 576px) { .galeria { column-count: 1; } .projeto-titulo { font-size: 1.8rem; } }
-            .galeria-item { break-inside: avoid; margin-bottom: 1rem; overflow: hidden; position: relative; }
-            .galeria-item img { width: 100%; display: block; transition: transform 0.6s ease; filter: brightness(0.92); pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-user-drag: none; }
+
+            .galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 5rem; }
+            .galeria-item { overflow: hidden; position: relative; break-inside: avoid; }
+            .galeria-item img { width: 100%; display: block; transition: transform 0.6s ease; filter: brightness(0.92); -webkit-user-drag: none; pointer-events: none; }
+            .galeria-item::after { content: ""; position: absolute; inset: 0; z-index: 2; }
             .galeria-item:hover img { transform: scale(1.03); filter: brightness(1); }
-            /* Overlay transparente que bloqueia o botão direito sobre as imagens */
-            .galeria-item::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; }
+
             .footer-projeto { padding: 3rem 0; text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.2); letter-spacing: 0.1em; border-top: 1px solid rgba(255,255,255,0.06); }
+
+            @media (max-width: 768px) {
+                .galeria { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+                .projeto-titulo { font-size: 1.5rem; }
+                .projeto-header { padding: 3rem 0 1.5rem 0; }
+                .projeto-descricao { font-size: 0.95rem; margin-bottom: 2rem; }
+            }
         </style>
     </head>
     <body>
         <div class="container px-4 px-lg-5">
-
             <a href="index.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> Voltar</a>
-
             <div class="projeto-header">
                 <h1 class="projeto-titulo">Etcetera</h1>
                 <p class="projeto-data">Brasil</p>
             </div>
-
-            <p class="projeto-descricao">
-            
-            </p>
-
-            <div class="galeria" id="galeria">
-                <div class="galeria-item"><img src="assets/img/p4f1.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f2.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f2-2.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f3.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f4-4.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f5.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f5-5.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f6.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f7.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f7-7.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f8.jpeg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f9.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f10.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f10-10.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f11.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f12.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f13.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f14.png" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f15.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f16.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f17.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f18.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f19.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f20.jpg" alt="" draggable="false" /></div>
-                <div class="galeria-item"><img src="assets/img/p4f21.jpg" alt="" draggable="false" /></div>
+            <p class="projeto-descricao"></p>
+            <div class="galeria">
+                <div class="galeria-item"><img src="assets/img/p4f1.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f2.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f2-2.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f3.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f4-4.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f5.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f5-5.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f6.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f7.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f7-7.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f8.jpeg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f9.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f10.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f10-10.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f11.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f12.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f13.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f14.png" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f15.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f16.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f17.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f18.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f19.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f20.jpg" alt="" loading="lazy" draggable="false" /></div>
+                <div class="galeria-item"><img src="assets/img/p4f21.jpg" alt="" loading="lazy" draggable="false" /></div>
             </div>
-
         </div>
         <footer class="footer-projeto">Copyright &copy; Niki Nomura</footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
-            // Bloqueia botão direito em toda a página
-            document.addEventListener('contextmenu', function(e) {
-                e.preventDefault();
-                return false;
-            });
-
-            // Bloqueia atalhos de teclado para salvar (Ctrl+S, Ctrl+U, F12)
+            document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
             document.addEventListener('keydown', function(e) {
-                if (
-                    (e.ctrlKey && (e.key === 's' || e.key === 'S' || e.key === 'u' || e.key === 'U')) ||
-                    e.key === 'F12'
-                ) {
-                    e.preventDefault();
-                    return false;
+                if ((e.ctrlKey && ['s','S','u','U'].includes(e.key)) || e.key === 'F12') {
+                    e.preventDefault(); return false;
                 }
             });
-
-            // Bloqueia drag das imagens
             document.querySelectorAll('img').forEach(function(img) {
-                img.addEventListener('dragstart', function(e) {
-                    e.preventDefault();
-                    return false;
-                });
+                img.addEventListener('dragstart', function(e) { e.preventDefault(); return false; });
             });
         </script>
     </body>

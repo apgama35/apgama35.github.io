@@ -5,9 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Bastião — Niki Nomura</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <style>
             body { background-color: #000; color: #fff; }
@@ -18,40 +17,44 @@
             .projeto-titulo { font-family: "Varela Round", sans-serif; font-size: 2.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; }
             .projeto-data { font-family: "Nunito", sans-serif; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
             .projeto-descricao { font-family: "Nunito", sans-serif; font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,0.65); max-width: 720px; margin-bottom: 4rem; }
-            .galeria { column-count: 2; column-gap: 1rem; margin-bottom: 5rem; }
-            @media (max-width: 768px) { .galeria { column-count: 1; } .projeto-titulo { font-size: 1.8rem; } }
-            .galeria-item { break-inside: avoid; margin-bottom: 1rem; overflow: hidden; }
-            .galeria-item img { width: 100%; display: block; transition: transform 0.6s ease; filter: brightness(0.92); }
+
+            .galeria { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 5rem; }
+            .galeria-item { overflow: hidden; aspect-ratio: 1 / 1; position: relative; }
+            .galeria-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; filter: brightness(0.92); -webkit-user-drag: none; pointer-events: none; }
+            .galeria-item::after { content: ""; position: absolute; inset: 0; z-index: 2; }
             .galeria-item:hover img { transform: scale(1.03); filter: brightness(1); }
+
             .footer-projeto { padding: 3rem 0; text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.2); letter-spacing: 0.1em; border-top: 1px solid rgba(255,255,255,0.06); }
+
+            @media (max-width: 768px) {
+                .galeria { grid-template-columns: 1fr; gap: 0.5rem; }
+                .projeto-titulo { font-size: 1.5rem; }
+                .projeto-header { padding: 3rem 0 1.5rem 0; }
+                .projeto-descricao { font-size: 0.95rem; margin-bottom: 2rem; }
+            }
         </style>
     </head>
     <body>
         <div class="container px-4 px-lg-5">
-
             <a href="index.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> Voltar</a>
-
             <div class="projeto-header">
                 <h1 class="projeto-titulo">Bastião</h1>
-                <!-- Substitua pelo ano ou período do projeto -->
                 <p class="projeto-data">Maranhão, Floripa e Arujá — Brasil</p>
             </div>
-
-            <!-- Substitua pelo texto descritivo do projeto -->
             <p class="projeto-descricao">
-                investiga a construção simbólica do céu a partir da fotografia e da materialidade do tecido. Imagens capturadas em diferentes horários são convertidas em superfícies têxteis de variados formatos e tons de azul, aproximando-se do imaginário coletivo de “céu”. Esses fragmentos são então aplicados sobre objetos, espaços e o próprio corpo, inserindo-se no ambiente de maneira deliberadamente dissonante. O trabalho opera nessa zona de estranhamento, onde o artificial tenta se fundir ao natural, tensionando percepção, escala e pertencimento.
+                investiga a construção simbólica do céu a partir da fotografia e da materialidade do tecido. Imagens capturadas em diferentes horários são convertidas em superfícies têxteis de variados formatos e tons de azul, aproximando-se do imaginário coletivo de "céu". Esses fragmentos são então aplicados sobre objetos, espaços e o próprio corpo, inserindo-se no ambiente de maneira deliberadamente dissonante. O trabalho opera nessa zona de estranhamento, onde o artificial tenta se fundir ao natural, tensionando percepção, escala e pertencimento.
             </p>
-
-            <!-- Substitua os src pelas imagens reais do projeto -->
             <div class="galeria">
-                <div class="galeria-item"><img src="assets/img/bg-masthead.jpg.png" alt="" /></div>
-                <div class="galeria-item"><img src="assets/img/teorema.png" alt="" /></div>
-                <div class="galeria-item"><img src="assets/img/estoico.jpg" alt="" /></div>
-                <div class="galeria-item"><img src="assets/img/foto4.jpg" alt="" /></div>
+                <div class="galeria-item"><img src="assets/img/bg-masthead.jpg.png" alt="" loading="lazy" /></div>
+                <div class="galeria-item"><img src="assets/img/teorema.png" alt="" loading="lazy" /></div>
+                <div class="galeria-item"><img src="assets/img/estoico.jpg" alt="" loading="lazy" /></div>
+                <div class="galeria-item"><img src="assets/img/foto4.jpg" alt="" loading="lazy" /></div>
             </div>
-
         </div>
         <footer class="footer-projeto">Copyright &copy; Niki Nomura</footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.addEventListener('contextmenu', function(e) { if (e.target.tagName === 'IMG') e.preventDefault(); });
+        </script>
     </body>
 </html>
